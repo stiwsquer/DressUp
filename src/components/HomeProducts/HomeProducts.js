@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 
-import "./style.scss";
+// import "./style.scss";
 import Card from "../Card/Card";
 import {
   CustomCarousel,
