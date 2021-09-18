@@ -11,8 +11,8 @@ export const CustomCarousel = styled(Carousel)`
     font-weight: 200 !important;
   }
 
-  .khvUfi.rec.rec-arrow.rec-arrow-right:hover,
-  .khvUfi.rec.rec-arrow.rec-arrow-left:hover {
+  .rec.rec-arrow.rec-arrow-right:hover,
+  .rec.rec-arrow.rec-arrow-left:hover {
     background: transparent !important;
     border: none !important;
     border-radius: 50% !important;
@@ -21,16 +21,16 @@ export const CustomCarousel = styled(Carousel)`
     font-size: 3rem !important;
   }
 
-  .sc-bdfBQB.khvUfi.rec.rec-arrow.rec-arrow-left:focus,
-  .sc-bdfBQB.khvUfi.rec.rec-arrow.rec-arrow-right:focus {
+  .rec.rec-arrow.rec-arrow-left:focus,
+  .rec.rec-arrow.rec-arrow-right:focus {
     background-color: transparent !important;
     border: none !important;
     box-shadow: none !important;
     color: black !important;
   }
 
-  .sc-bdfBQB.khvUfi.rec.rec-arrow.rec-arrow-left:focus:hover,
-  .sc-bdfBQB.khvUfi.rec.rec-arrow.rec-arrow-right:focus:hover {
+  .rec.rec-arrow.rec-arrow-left:focus:hover,
+  .rec.rec-arrow.rec-arrow-right:focus:hover {
     box-shadow: 0rem 1rem 1rem rgba($color: #000000, $alpha: 0.2) !important;
   }
 
@@ -38,13 +38,13 @@ export const CustomCarousel = styled(Carousel)`
     cursor: context-menu !important;
   }
 
-  .sc-gKseQn.gQIqMI {
+  .gQIqMI {
     box-shadow: none !important;
     border: 0.1px solid black !important;
     width: 2rem !important;
     height: 2rem !important;
   }
-  .sc-gKseQn.gQIqMI:hover {
+  .gQIqMI:hover {
     cursor: pointer;
     background-color: rgba($color: #000000, $alpha: 0.2) !important;
     box-shadow: none !important;
@@ -52,7 +52,7 @@ export const CustomCarousel = styled(Carousel)`
     width: 2rem !important;
     height: 2rem !important;
   }
-  .rec.rec-dot.sc-gKseQn.rec-dot_active {
+  .rec.rec-dot.rec-dot_active {
     background-color: rgba($color: #000000, $alpha: 1) !important;
     box-shadow: none !important;
     border: 0.1px solid black !important;
