@@ -5,11 +5,11 @@ import "./style.scss";
 export default React.memo(function Button({
   children,
   type,
-  nameOfTheClass,
+  className,
   onClick,
 }) {
   return (
-    <button onClick={onClick} className={nameOfTheClass} type={type}>
+    <button onClick={onClick} className={className} type={type}>
       {children}
     </button>
   );

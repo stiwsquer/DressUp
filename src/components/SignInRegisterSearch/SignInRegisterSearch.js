@@ -5,12 +5,12 @@ export default React.memo(function SignInRegisterSearch({
   setShowMenu,
   showMenu,
   setShowSerch,
-  nameOfTheClass,
+  className,
   searchRef,
 }) {
   const handleShowMenu = () => setShowMenu((prev) => !prev);
   return (
-    <ul className={nameOfTheClass}>
+    <ul className={className}>
       <li onClick={handleShowMenu}>
         <NavItem
           linkTo="/signIn"

@@ -30,7 +30,7 @@ export default React.memo(function Navigation() {
           </span>
           <SignInRegisterSearch
             searchRef={searchRef}
-            nameOfTheClass={signInRegisterSearchClassName}
+            className={signInRegisterSearchClassName}
             setShowMenu={setShowMenu}
             showMenu={showMenu}
             setShowSerch={setShowSerch}
@@ -47,7 +47,7 @@ export default React.memo(function Navigation() {
         </nav>
         {showSearch ? (
           <OutsideAlerter setShowElement={setShowSerch} searchRef={searchRef}>
-            <SearchBox nameOfTheClass="search-box" />
+            <SearchBox className="search-box" />
           </OutsideAlerter>
         ) : null}
       </div>
