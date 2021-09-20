@@ -14,7 +14,7 @@ it("renders SignInRegisterSearch component without crashing", () => {
 });
 
 it("render component", () => {
-  const Wrapper = shallow(<SignInRegisterSearch showMenu={true} />);
+  const Wrapper = shallow(<SignInRegisterSearch showMenu />);
   expect(Wrapper).toBeDefined;
 });
 

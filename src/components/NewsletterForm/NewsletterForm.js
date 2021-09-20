@@ -10,7 +10,7 @@ export default React.memo(function NewsletterForm(props) {
       <p>Get the latest updates on new products and upcoming sales</p>
       <div>
         <Input
-          isRequired={true}
+          isRequired
           inputType="email"
           placeholder="Your email adress"
           inputId="email-newsletter"

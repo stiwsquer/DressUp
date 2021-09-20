@@ -71,8 +71,6 @@ export const CardButton = styled(Button)`
   border: 0.1rem solid black;
 `;
 
-export const CardBody = styled.div``;
-
 export const CardTitle = styled.h4`
   font-size: 1.5rem;
   font-family: "Karla-200", sans-serif;
@@ -85,72 +83,4 @@ export const CardTitle = styled.h4`
 export const CardText = styled.p`
   font-size: 1.5rem;
   font-family: "Karla-800", sans-serif;
-`;
-
-export const CardSwatches = styled.div`
-  align-self: center;
-  margin: 0.5rem;
-  display: flex;
-  .radio {
-    input[type="radio"] {
-      position: absolute;
-      width: 2.5rem;
-      height: 2.5rem;
-      margin-left: 1rem;
-      opacity: 0;
-      cursor: pointer;
-      + .radio-label {
-        span {
-          margin: 1rem;
-          content: "";
-          background: grey;
-          border-radius: 100%;
-          border: 0.1px solid rgba($color: #000000, $alpha: 0.3);
-          display: inline-block;
-          width: 2.5rem;
-          height: 2.5rem;
-          position: relative;
-          top: -1rem;
-          margin-right: 1rem;
-          vertical-align: top;
-
-          text-align: center;
-          pointer-events: none;
-          transition: all 0.25s ease;
-        }
-      }
-      &:checked {
-        + .radio-label {
-          span {
-            border: 0.3px solid rgba($color: black, $alpha: 0.5);
-            box-shadow: 0 0 1rem rgba($color: red, $alpha: 0.6);
-          }
-        }
-      }
-      &:focus {
-        + .radio-label {
-          span {
-            border: 0.3px solid rgba($color: black, $alpha: 0.5);
-            box-shadow: 0 0 1rem rgba($color: red, $alpha: 0.6);
-          }
-        }
-      }
-      &:disabled {
-        + .radio-label {
-          span {
-            box-shadow: inset 0 0 0 4px red;
-            border-color: darken(red, 25%);
-            background: darken(red, 25%);
-          }
-        }
-      }
-      + .radio-label {
-        &:empty {
-          span {
-            margin-right: 0;
-          }
-        }
-      }
-    }
-  }
 `;

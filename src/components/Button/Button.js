@@ -1,5 +1,4 @@
 import React from "react";
-import { Link, useHistory } from "react-router-dom";
 import { StyledButton } from "./Button.style";
 
 export default React.memo(function Button({

@@ -18,8 +18,6 @@ export default React.memo(function CardModal({
   open,
   setIsModalOpen,
   imagesSources,
-  title,
-  text,
 }) {
   if (!open) return null;
 
@@ -29,7 +27,7 @@ export default React.memo(function CardModal({
 
   const images = useMemo(() => {
     const temporaryImages = [];
-    imagesSources.map((source) => {
+    imagesSources.forEach((source) => {
       temporaryImages.push(<img key={source.src} src={source.src} alt="" />);
       temporaryImages.push(
         <img key={source.srcHover} src={source.srcHover} alt="" />

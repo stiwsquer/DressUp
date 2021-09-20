@@ -9,11 +9,11 @@ export default React.memo(function SignIn() {
   return (
     <SignInSection>
       <SignInForm>
-        <Input isRequired={true} inputType="email" inputId="email">
+        <Input isRequired inputType="email" inputId="email">
           Email Address:
         </Input>
 
-        <Input isRequired={true} inputType="password" inputId="password">
+        <Input isRequired inputType="password" inputId="password">
           Password:
         </Input>
         <Button>SIGN IN</Button>

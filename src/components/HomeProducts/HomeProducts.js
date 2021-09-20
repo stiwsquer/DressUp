@@ -17,19 +17,17 @@ export default React.memo(function HomeProducts() {
 
   const getProducts = async () => {
     try {
-      let products = await fetch("/products.json");
-      let json = await products.json();
-      const cards = json.map((card, index) => {
-        return (
-          <Card
-            key={index}
-            linkTo="#"
-            title={card[0].title}
-            text={card[0].text}
-            imagesSources={card}
-          ></Card>
-        );
-      });
+      let res = await fetch("/products.json");
+      res = await res.json();
+      const cards = res.map((card, index) => (
+        <Card
+          key={index}
+          linkTo="#"
+          title={card[0].title}
+          text={card[0].text}
+          imagesSources={card}
+        ></Card>
+      ));
       setCards(cards);
       return cards;
     } catch (err) {
