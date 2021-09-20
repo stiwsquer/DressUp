@@ -9,10 +9,10 @@ export default React.memo(function Register() {
 
   const getCountries = async () => {
     try {
-      let countriesInfo = await fetch("https://restcountries.eu/rest/v2/all");
-      let json = await countriesInfo.json();
+      let res = await fetch("https://restcountries.eu/rest/v2/all");
+      res = await res.json();
       setCountryOptions(
-        json.map((country) => {
+        res.map((country) => {
           return {
             key: country.alpha2Code,
             value: country.alpha2Code,
@@ -28,11 +28,10 @@ export default React.memo(function Register() {
 
   const getMonths = async () => {
     try {
-      let months = await fetch("./months.json");
-      let json = await months.json();
-      console.log(json);
+      let res = await fetch("./months.json");
+      res = await res.json();
       setMonths(
-        json.map((month) => {
+        res.map((month) => {
           return {
             key: month.abbreviation,
             value: country.abbreviation,

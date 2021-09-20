@@ -18,16 +18,15 @@ export default React.memo(function Card({
   imagesSources,
   title,
   text,
+  imgAlt,
 }) {
   const [imgSrc, setImgSrc] = useState(imagesSources[0].src);
   const [imgSrcHover, setImgSrcHover] = useState(imagesSources[0].srcHover);
-  const [imgAlt, setImgAlt] = useState(imagesSources[0].imgAlt);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleInputRadioClick = (e) => {
     setImgSrc(imagesSources[e.target.value].src);
     setImgSrcHover(imagesSources[e.target.value].srcHover);
-    setImgAlt(imagesSources[e.target.value].imgAlt);
   };
 
   return (

@@ -23,9 +23,10 @@ export default React.memo(function HomeProducts() {
         <Card
           key={index}
           linkTo="#"
-          title={card[0].title}
-          text={card[0].text}
-          imagesSources={card}
+          title={card.title}
+          text={card.text}
+          imagesSources={card.images}
+          imgAlt={card.imgAlt}
         ></Card>
       ));
       setCards(cards);
