@@ -1,14 +1,14 @@
-@import "../../styles/global.scss";
-.signIn-register-search {
-  flex: 0;
-  @include flex(row, space-between, center);
+import styled from "styled-components";
+import { flex } from "../../GlobalStyles";
 
+export const UlContainer = styled.ul`
+  flex: 0;
+  ${flex({ justify: "space-between" })}
   a {
     transition: all 0.4s ease-in-out;
     translate: scale(1);
   }
-  a:hover,
-  .selected {
+  a:hover {
     translate: scale(1.2);
     padding: 1rem;
     border-radius: 1.5rem;
@@ -17,14 +17,12 @@
     color: white;
     font-weight: 900;
   }
-}
 
-.vertical-line {
-  opacity: 0.3;
-}
+  .vertical-line {
+    opacity: 0.3;
+  }
 
-@media screen and (max-width: 1000px) {
-  .signIn-register-search {
+  @media screen and (max-width: 1000px) {
     position: fixed;
     left: 0;
     top: 0;
@@ -32,8 +30,8 @@
     height: 110vh;
     background: white;
     z-index: 1;
-    @include flex(column, center, center);
-
+    ${flex({ direction: "column", justify: "center", align: "center" })}
+    display: ${(props) => (props.showMenu ? "flex" : "none")};
     .vertical-line {
       display: none;
     }
@@ -42,8 +40,4 @@
       font-size: 2rem;
     }
   }
-
-  .inactive-signIn-register-search {
-    display: none;
-  }
-}
+`;

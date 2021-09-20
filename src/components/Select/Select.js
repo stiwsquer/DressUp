@@ -1,5 +1,5 @@
 import React from "react";
-import "./style.scss";
+import { SelectWrapper } from "./Select.style";
 export default React.memo(function Select({
   isRequired,
   selectId,
@@ -9,7 +9,7 @@ export default React.memo(function Select({
   children,
 }) {
   return (
-    <div className="select-wrapper">
+    <SelectWrapper>
       <label htmlFor={selectId}>{children}</label>
 
       <select
@@ -27,6 +27,6 @@ export default React.memo(function Select({
           );
         })}
       </select>
-    </div>
+    </SelectWrapper>
   );
 });

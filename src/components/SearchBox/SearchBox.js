@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import Input from "../Input/Input";
 import { useSearchContext } from "../../context/SearchContext";
-import "./style.scss";
+import { SearchBoxWrapper } from "./SearchBox.style";
 export default React.memo(function SearchBox({ className }) {
   const [input, setSearchInput] = useSearchContext();
   return (
-    <div className={className}>
+    <SearchBoxWrapper className={className}>
       <Input
         inputValue={input}
         onInputChange={setSearchInput}
@@ -14,6 +14,6 @@ export default React.memo(function SearchBox({ className }) {
         placeholder="Search"
         autoFocus={true}
       />
-    </div>
+    </SearchBoxWrapper>
   );
 });

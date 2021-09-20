@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
-import "./style.scss";
+import { StyledButton } from "./Button.style";
 
 export default React.memo(function Button({
   children,
@@ -9,8 +9,8 @@ export default React.memo(function Button({
   onClick,
 }) {
   return (
-    <button onClick={onClick} className={className} type={type}>
+    <StyledButton onClick={onClick} className={className} type={type}>
       {children}
-    </button>
+    </StyledButton>
   );
 });

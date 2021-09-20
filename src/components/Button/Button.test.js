@@ -5,8 +5,6 @@ it("renders Button component without crashing", () => {
   shallow(<Button />);
 });
 
-//
-
 it("simulates click events", () => {
   const onButtonClick = sinon.spy();
   const buttonWrapper = mount(

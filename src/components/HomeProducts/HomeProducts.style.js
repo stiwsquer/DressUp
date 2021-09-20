@@ -21,7 +21,7 @@ export const ProductsTitle = styled.div`
     letter-spacing: 0.5rem;
     opacity: 0.8;
   }
-  span {
+  .horizontal-line {
     flex: 6 1 auto;
     height: 1px;
     opacity: 0.2;

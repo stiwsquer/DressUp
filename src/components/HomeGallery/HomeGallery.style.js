@@ -1,7 +1,8 @@
-@import "../../styles/global.scss";
-.home-gallery {
+import styled from "styled-components";
+import { flex } from "../../GlobalStyles";
+
+export const HomeGallerySection = styled.section`
   display: grid;
-  // gap: 3rem;
   min-height: 100vh;
   grid-template-columns: repeat(3, 1fr);
   width: 95%;
@@ -39,36 +40,32 @@
 
   .gallery-accessories,
   .gallery-new-shoes {
-    @include flex(column, center, center);
+    ${flex({ direction: "column", justify: "center", align: "center" })}
     text-align: center;
     font-size: 1.5rem;
-    h2 {
-      margin: 2rem;
-      letter-spacing: 0.2rem;
-    }
   }
+  .gallery-accessories h2,
+  .gallery-new-shoes h2 {
+    margin: 2rem;
+    letter-spacing: 0.2rem;
+  }
+
   button {
     margin-top: 2rem;
   }
-}
 
-@media screen and (max-width: 900px) {
-  .home-gallery {
-    // width: 100vw;
+  @media screen and (max-width: 900px) {
     img,
     div {
       grid-row: auto;
       grid-column: auto;
     }
-
     p {
       margin: 1rem;
     }
-
     .gallery1 {
       display: none;
     }
-
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   }
-}
+`;

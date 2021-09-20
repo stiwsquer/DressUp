@@ -15,7 +15,7 @@ it("contains two Button components", () => {
       <HomeGallery />
     </Router>
   );
-  expect(wrapper.find("Button")).toHaveLength(2);
+  expect(wrapper.find("button")).toHaveLength(2);
 });
 
 it("contains paragraph", () => {
@@ -33,7 +33,7 @@ it("contains paragraph", () => {
     )
   ).toBe(true);
 });
- 
+
 it("HomeGallery snapshop - shallow", () => {
   const wrapper = shallow(
     <Router>

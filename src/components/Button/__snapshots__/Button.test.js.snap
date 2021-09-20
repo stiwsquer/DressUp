@@ -2,7 +2,7 @@
 
 exports[`Button snapshot - mount 1`] = `
 <button
-  className="submitButton"
+  className="sc-bdfBQB gRvcyI submitButton"
   onClick={[Function]}
   type="submit"
 />
@@ -10,13 +10,13 @@ exports[`Button snapshot - mount 1`] = `
 
 exports[`Button snapshot - render 1`] = `
 <button
-  class="submitButton"
+  class="sc-bdfBQB gRvcyI submitButton"
   type="submit"
 />
 `;
 
 exports[`Button snapshot - shallow 1`] = `
-<button
+<styled.button
   className="submitButton"
   onClick={[Function]}
   type="submit"

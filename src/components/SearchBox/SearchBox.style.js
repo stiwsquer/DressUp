@@ -1,14 +1,15 @@
-@import "../../styles/global.scss";
-.search-box {
+import styled from "styled-components";
+import { flex } from "../../GlobalStyles";
+
+export const SearchBoxWrapper = styled.div`
+  ${flex({ align: "center", justify: "center" })};
   position: absolute;
   left: 0;
   top: 20vh;
   width: 100vw;
-  //   z-index: 10;
   min-height: 15vh;
   background: white;
-  @include flex(row, center, center);
-  box-shadow: 0px 10px 10px rgba($color: #000000, $alpha: 0.2);
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
 
   input {
     text-align: center;
@@ -19,7 +20,4 @@
     outline: none;
     border: 0.1rem solid black;
   }
-}
-.inactive-search {
-  display: none;
-}
+`;

@@ -82,6 +82,67 @@ nav {
     list-style: none;
   }
 }
+
+
+
+.rec.rec-arrow {
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    box-shadow: none;
+    font-size: 3rem;
+    font-weight: 200;
+  }
+
+  .rec.rec-arrow.rec-arrow-right:hover,
+  .rec.rec-arrow.rec-arrow-left:hover {
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0rem 1rem 1rem rgba(0, 0, 0, 0.2);
+    color: #000000;
+    font-size: 3rem;
+  }
+
+  .rec.rec-arrow.rec-arrow-left:focus,
+  .rec.rec-arrow.rec-arrow-right:focus {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    color: black;
+  }
+
+  .rec.rec-arrow.rec-arrow-left:focus:hover,
+  .rec.rec-arrow.rec-arrow-right:focus:hover {
+    box-shadow: 0rem 1rem 1rem rgba(0, 0, 0, 0.2);
+  }
+
+  .rec.rec-arrow.rec-arrow-left:disabled,
+  .rec.rec-arrow.rec-arrow-right:disabled {
+    cursor: context-menu;
+  }
+
+  .rec.rec-dot {
+    box-shadow: none;
+    border: 0.1px solid black;
+    width: 2rem;
+    height: 2rem;
+  }
+  .rec.rec-dot:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: none;
+    border: 0.1px solid black;
+    width: 2rem;
+    height: 2rem;
+  }
+  .rec.rec-dot.rec-dot_active {
+    background-color: rgba(0, 0, 0, 1);
+    box-shadow: none;
+    border: 0.1px solid black;
+    width: 2rem;
+    height: 2rem;
+  }
 `;
 
 export const flex = ({ direction, justify, align }) => `

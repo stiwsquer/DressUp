@@ -1,6 +1,9 @@
 import Button from "../Button/Button";
 import React from "react";
-import "./style.scss";
+import {
+  NewCustomerInfoInner,
+  NewCustomerInfoOuter,
+} from "./NewCustomerInfo.style";
 import { useHistory } from "react-router-dom";
 
 export default React.memo(function NewCustomerInfo() {
@@ -9,8 +12,8 @@ export default React.memo(function NewCustomerInfo() {
     history.push("/register");
   };
   return (
-    <div className="new-customer-info">
-      <div className="new-customer-info-wrapper">
+    <NewCustomerInfoOuter>
+      <NewCustomerInfoInner>
         <h3>New Customer?</h3>
         <p>Create an account with us and you&apos;ll be able to:</p>
         <ul>
@@ -21,7 +24,7 @@ export default React.memo(function NewCustomerInfo() {
           <li>Save items to your Wish List</li>
         </ul>
         <Button onClick={handleClick}>CREATE ACCOUNT</Button>
-      </div>
-    </div>
+      </NewCustomerInfoInner>
+    </NewCustomerInfoOuter>
   );
 });

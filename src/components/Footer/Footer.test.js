@@ -1,5 +1,7 @@
 import Footer from "./Footer";
 import NavItem from "../NavItem/NavItem";
+import { MemoryRouter } from "react-router";
+import { render } from "enzyme";
 
 it("renders Footer component without crashing", () => {
   shallow(<Footer />);
@@ -11,7 +13,11 @@ it("renders four <NavItem /> components", () => {
 });
 
 it("contains footer element", () => {
-  const wrapper = shallow(<Footer linkTo="#" />);
+  const wrapper = mount(
+    <MemoryRouter>
+      <Footer linkTo="#" />
+    </MemoryRouter>
+  );
   expect(wrapper.find("footer")).toHaveLength(1);
 });
 

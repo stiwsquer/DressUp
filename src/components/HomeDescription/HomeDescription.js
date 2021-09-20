@@ -1,9 +1,9 @@
 import React from "react";
 import Button from "../Button/Button";
-import "./style.scss";
+import { HomeDescriptionSection } from "./HomeDescription.style";
 export default React.memo(function HomeDescription() {
   return (
-    <section className="home-description">
+    <HomeDescriptionSection>
       <h2>
         Trendy Clothing & Accessories at Dress Up - An Online Dress Boutique
       </h2>
@@ -24,6 +24,6 @@ export default React.memo(function HomeDescription() {
         UNITED STATES!
       </p>
       <Button>SHOP OUR NEWEST ARRIVALS</Button>
-    </section>
+    </HomeDescriptionSection>
   );
 });

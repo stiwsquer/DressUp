@@ -1,6 +1,5 @@
 import React from "react";
-import "./style.scss";
-
+import { InputWrapper } from "./Input.style";
 export default React.memo(function Input({
   isRequired,
   inputId,
@@ -12,7 +11,7 @@ export default React.memo(function Input({
   children,
 }) {
   return (
-    <div className="input-wrapper">
+    <InputWrapper>
       <label htmlFor={inputId}>{children}</label>
       <input
         id={inputId}
@@ -23,6 +22,6 @@ export default React.memo(function Input({
         required={isRequired}
         autoFocus={autoFocus}
       />
-    </div>
+    </InputWrapper>
   );
 });
