@@ -1,5 +1,6 @@
-@import "../../styles/global.scss";
-button {
+import styled from "styled-components";
+
+export const StyledButton = styled.button`
   background: #202020;
   color: white;
   border: none;
@@ -11,4 +12,4 @@ button {
   &:hover {
     opacity: 0.8;
   }
-}
+`;

@@ -2,7 +2,7 @@
 
 exports[`Change props values 1`] = `
 <div
-  className="input-wrapper"
+  className="sc-bdfBQB gPpvcq"
 >
   <label>
     Label
@@ -19,7 +19,7 @@ exports[`Change props values 1`] = `
 
 exports[`Change props values 2`] = `
 <div
-  className="input-wrapper"
+  className="sc-bdfBQB gPpvcq"
 >
   <label>
     Label

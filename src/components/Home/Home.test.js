@@ -2,17 +2,17 @@ import Home from "./Home";
 import HomeDescription from "../HomeDescription/HomeDescription";
 import HomeGallery from "../HomeGallery/HomeGallery";
 import HomeProducts from "../HomeProducts/HomeProducts";
+
+import { HomeIntro } from "../Home/Home.style";
 import { BrowserRouter as Router } from "react-router-dom";
 
 it("renders Home component without crashing", () => {
   shallow(<Home />);
 });
 
-it("contains section element", () => {
+it("contains HomeIntro component", () => {
   const wrapper = shallow(<Home />);
-  expect(wrapper.contains(<section className="home-intro"></section>)).toBe(
-    true
-  );
+  expect(wrapper.contains(<HomeIntro />)).toBe(true);
 });
 
 it("contains HomoDescription component", () => {

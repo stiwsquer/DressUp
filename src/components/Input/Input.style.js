@@ -1,9 +1,11 @@
-@import "../../styles/global.scss";
-.input-wrapper {
-  @include flex(column, center, flex-start);
+import styled from "styled-components";
+import { flex } from "../../GlobalStyles";
+
+export const InputWrapper = styled.div`
+  ${flex({ direction: "column", align: "flex-start" })};
 
   label {
-    line-height: 1.5; 
+    line-height: 1.5;
     margin-bottom: 1rem;
   }
   input {
@@ -14,4 +16,4 @@
     height: 4rem;
     font-size: 1.5rem;
   }
-}
+`;

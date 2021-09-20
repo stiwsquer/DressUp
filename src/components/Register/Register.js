@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Button from "../Button/Button";
 import Input from "../Input/Input";
 import Select from "../Select/Select";
-import "./style.scss";
+import { RegisterForm, FormWrapper, RegisterSection } from "./Register.style";
 export default React.memo(function Register() {
   const [countryOptions, setCountryOptions] = useState([]);
   const [months, setMonths] = useState([]);
@@ -47,9 +47,9 @@ export default React.memo(function Register() {
   useEffect(getMonths, []);
 
   return (
-    <section className="register">
-      <form>
-        <div className="form-wrapper">
+    <RegisterSection>
+      <RegisterForm>
+        <FormWrapper>
           <Input isRequired={true} inputType="email" inputId="email">
             Email Adress
           </Input>
@@ -104,9 +104,9 @@ export default React.memo(function Register() {
           <Input isRequired={true} inputType="text" inputId="zip">
             Zip/Postcode
           </Input>
-        </div>
+        </FormWrapper>
         <Button type="submit">CREATE ACCOUNT</Button>
-      </form>
-    </section>
+      </RegisterForm>
+    </RegisterSection>
   );
 });

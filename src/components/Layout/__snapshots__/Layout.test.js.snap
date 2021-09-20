@@ -2,28 +2,28 @@
 
 exports[`Layour snapshot - shallow 1`] = `
 <BrowserRouter>
-  <Header />
+  <Memo(Header) />
   <main>
     <Switch>
       <Route
         path="/signIn"
       >
-        <SignIn />
+        <Memo(SignIn) />
       </Route>
       <Route
         path="/register"
       >
-        <Register />
+        <Memo(Register) />
       </Route>
       <Route
         exact={true}
         path="/"
       >
-        <Home />
+        <Memo(Home) />
       </Route>
     </Switch>
   </main>
-  <NewsletterForm />
-  <Footer />
+  <Memo(NewsletterForm) />
+  <Memo(Footer) />
 </BrowserRouter>
 `;

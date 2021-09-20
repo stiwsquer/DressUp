@@ -3,10 +3,10 @@
 exports[`Home snapshot - mount 1`] = `
 Array [
   <section
-    className="home-intro"
+    className="sc-bdfBQB koYkVf"
   />,
   <section
-    className="home-description"
+    className="sc-dlfnuX iXbmMg"
   >
     <h2>
       Trendy Clothing & Accessories at Dress Up - An Online Dress Boutique
@@ -14,12 +14,14 @@ Array [
     <p>
       DRESS UP IS A WOMEN'S CLOTHING BOUTIQUE CARRYING A VARIETY OF FITS, STYLES, AND PATTERNS FOR WOMEN OF ALL AGES, SHAPES, AND SIZES. WE OFFER A DIVERSE COLLECTION OF NEW PRODUCTS EVERY SINGLE WEEK, INCLUDING YOUR FAVORITE CLOTHING ITEMS: CUTE ROMPERS, MAXI DRESSES, KNIT SWEATERS, OVERSIZED TOPS, AND LIGHTWEIGHT CARDIGANS, AS WELL AS TRENDY SHOES, ACCESSORIES, JEWELRY, ACTIVEWEAR, LOUNGEWEAR, AND SO MUCH MORE. DRESS UP'S TRENDY, YET WEARABLE CLOTHES WILL HAVE YOU FEELING LIKE YOUR BEST SELF, NO MATTER WHERE YOU'RE HEADED. YOU CAN SHOP WITH US ONLINE OR AT ANY OF OUR RETAIL LOCATIONS ACROSS THE SOUTHEAST, INCLUDING STORES IN GEORGIA, ALABAMA, SOUTH CAROLINA, AND TENNESSEE. GET FREE SHIPPING ON ALL ORDERS OVER $49, AND FEEL FREE TO REACH OUT TO US AT 678.989.2006 WITH ANY QUESTIONS. DON'T MISS OUT - COME SEE WHY DRESS UP IS ONE OF THE FASTEST GROWING ONLINE DRESS BOUTIQUES IN THE UNITED STATES!
     </p>
-    <button>
+    <button
+      className="sc-gsTEea fwStHo"
+    >
       SHOP OUR NEWEST ARRIVALS
     </button>
   </section>,
   <section
-    className="home-gallery"
+    className="sc-hKgJUU gsAJoF"
   >
     <div
       className="gallery-new-shoes"
@@ -30,7 +32,9 @@ Array [
       <p>
         We just dropped new fall shoe styles, and they are all ON SALE! Shop new combat boots, booties, mules, sneakers & more!
       </p>
-      <button>
+      <button
+        className="sc-gsTEea fwStHo"
+      >
         SHOP SHOES
       </button>
     </div>
@@ -43,7 +47,9 @@ Array [
       <p>
         Take your fall outfit to the next level with new accessories! The perfect trendy handbag, dainty gold necklace, coin bracelet or statement earrings will upgrade any look.
       </p>
-      <button>
+      <button
+        className="sc-gsTEea fwStHo"
+      >
         SHOP ACCESSORIES
       </button>
     </div>
@@ -61,10 +67,10 @@ Array [
     />
   </section>,
   <section
-    className="home-products"
+    className="sc-fKFxtB eJbrih"
   >
     <div
-      className="products-title"
+      className="sc-bBXrwG bCYZRe"
     >
       <span
         className="horizontal-line"
@@ -77,82 +83,78 @@ Array [
       />
     </div>
     <div
-      className="cards"
+      className="sc-pGacB hSClWU rec rec-carousel-wrapper "
+      style={Object {}}
     >
       <div
-        className="sc-jSgvzq jJOCMs rec rec-carousel-wrapper "
-        style={Object {}}
+        className="sc-fubCzh jpFwKe rec rec-carousel"
+        size={
+          Object {
+            "height": 0,
+          }
+        }
+        style={
+          Object {
+            "height": 0,
+          }
+        }
       >
-        <div
-          className="sc-eCstlR bwgQCB rec rec-carousel"
-          size={
-            Object {
-              "height": 0,
-            }
-          }
-          style={
-            Object {
-              "height": 0,
-            }
-          }
+        <button
+          className="sc-eCstlR cjTZXe rec rec-arrow rec rec-arrow-left"
+          disabled={true}
+          onClick={[Function]}
+          style={Object {}}
+          tabIndex={0}
+          type="button"
         >
-          <button
-            className="sc-bdfBQB eRmJbc rec rec-arrow rec rec-arrow-left"
-            disabled={true}
-            onClick={[Function]}
-            style={Object {}}
-            tabIndex={0}
-            type="button"
-          >
-            ❮
-          </button>
+          ❮
+        </button>
+        <div
+          className="sc-gKseQn cpVDds rec rec-slider-container"
+        >
           <div
-            className="sc-dlfnuX bVibPY rec rec-slider-container"
+            className="sc-iBPTik VUXJj rec rec-slider"
+            style={
+              Object {
+                "left": "0px",
+                "right": "auto",
+                "top": "auto",
+                "transition": "all 500ms ease",
+              }
+            }
           >
             <div
-              className="sc-hKgJUU hUugPI rec rec-slider"
+              className="rec rec-swipable"
+              onMouseDown={[Function]}
               style={
                 Object {
-                  "left": "0px",
-                  "right": "auto",
-                  "top": "auto",
-                  "transition": "all 500ms ease",
+                  "display": "flex",
+                  "flexDirection": "row",
                 }
               }
-            >
-              <div
-                className="rec rec-swipable"
-                onMouseDown={[Function]}
-                style={
-                  Object {
-                    "display": "flex",
-                    "flexDirection": "row",
-                  }
-                }
-              />
-            </div>
+            />
           </div>
-          <button
-            className="sc-bdfBQB eRmJbc rec rec-arrow rec rec-arrow-right"
-            disabled={true}
-            onClick={[Function]}
-            style={Object {}}
-            tabIndex={0}
-            type="button"
-          >
-            ❯
-          </button>
         </div>
-        <div
-          className="sc-iBPTik iHAfmq rec rec-pagination"
+        <button
+          className="sc-eCstlR cjTZXe rec rec-arrow rec rec-arrow-right"
+          disabled={true}
+          onClick={[Function]}
+          style={Object {}}
+          tabIndex={0}
+          type="button"
         >
-          <button
-            className="sc-gKseQn jJKuoL rec rec-dot rec rec-dot_active"
-            onClick={[Function]}
-            tabIndex={-1}
-            type="button"
-          />
-        </div>
+          ❯
+        </button>
+      </div>
+      <div
+        className="sc-kEjbQP kdKhVE rec rec-pagination"
+      >
+        <button
+          className="sc-jrAFXE etbLqk rec rec-dot rec rec-dot_active"
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button"
+        />
       </div>
     </div>
   </section>,
@@ -162,10 +164,10 @@ Array [
 exports[`Home snapshot - render 1`] = `
 Array [
   <section
-    class="home-intro"
+    class="sc-bdfBQB koYkVf"
   />,
   <section
-    class="home-description"
+    class="sc-dlfnuX iXbmMg"
   >
     <h2>
       Trendy Clothing & Accessories at Dress Up - An Online Dress Boutique
@@ -173,12 +175,14 @@ Array [
     <p>
       DRESS UP IS A WOMEN'S CLOTHING BOUTIQUE CARRYING A VARIETY OF FITS, STYLES, AND PATTERNS FOR WOMEN OF ALL AGES, SHAPES, AND SIZES. WE OFFER A DIVERSE COLLECTION OF NEW PRODUCTS EVERY SINGLE WEEK, INCLUDING YOUR FAVORITE CLOTHING ITEMS: CUTE ROMPERS, MAXI DRESSES, KNIT SWEATERS, OVERSIZED TOPS, AND LIGHTWEIGHT CARDIGANS, AS WELL AS TRENDY SHOES, ACCESSORIES, JEWELRY, ACTIVEWEAR, LOUNGEWEAR, AND SO MUCH MORE. DRESS UP'S TRENDY, YET WEARABLE CLOTHES WILL HAVE YOU FEELING LIKE YOUR BEST SELF, NO MATTER WHERE YOU'RE HEADED. YOU CAN SHOP WITH US ONLINE OR AT ANY OF OUR RETAIL LOCATIONS ACROSS THE SOUTHEAST, INCLUDING STORES IN GEORGIA, ALABAMA, SOUTH CAROLINA, AND TENNESSEE. GET FREE SHIPPING ON ALL ORDERS OVER $49, AND FEEL FREE TO REACH OUT TO US AT 678.989.2006 WITH ANY QUESTIONS. DON'T MISS OUT - COME SEE WHY DRESS UP IS ONE OF THE FASTEST GROWING ONLINE DRESS BOUTIQUES IN THE UNITED STATES!
     </p>
-    <button>
+    <button
+      class="sc-gsTEea fwStHo"
+    >
       SHOP OUR NEWEST ARRIVALS
     </button>
   </section>,
   <section
-    class="home-gallery"
+    class="sc-hKgJUU gsAJoF"
   >
     <div
       class="gallery-new-shoes"
@@ -189,7 +193,9 @@ Array [
       <p>
         We just dropped new fall shoe styles, and they are all ON SALE! Shop new combat boots, booties, mules, sneakers & more!
       </p>
-      <button>
+      <button
+        class="sc-gsTEea fwStHo"
+      >
         SHOP SHOES
       </button>
     </div>
@@ -202,7 +208,9 @@ Array [
       <p>
         Take your fall outfit to the next level with new accessories! The perfect trendy handbag, dainty gold necklace, coin bracelet or statement earrings will upgrade any look.
       </p>
-      <button>
+      <button
+        class="sc-gsTEea fwStHo"
+      >
         SHOP ACCESSORIES
       </button>
     </div>
@@ -220,10 +228,10 @@ Array [
     />
   </section>,
   <section
-    class="home-products"
+    class="sc-fKFxtB eJbrih"
   >
     <div
-      class="products-title"
+      class="sc-bBXrwG bCYZRe"
     >
       <span
         class="horizontal-line"
@@ -236,54 +244,50 @@ Array [
       />
     </div>
     <div
-      class="cards"
+      class="sc-pGacB hSClWU rec rec-carousel-wrapper "
     >
       <div
-        class="sc-jSgvzq jJOCMs rec rec-carousel-wrapper "
+        class="sc-fubCzh jpFwKe rec rec-carousel"
+        style="height:0"
       >
-        <div
-          class="sc-eCstlR bwgQCB rec rec-carousel"
-          style="height:0"
+        <button
+          class="sc-eCstlR cjTZXe rec rec-arrow rec rec-arrow-left"
+          disabled=""
+          tabindex="0"
+          type="button"
         >
-          <button
-            class="sc-bdfBQB eRmJbc rec rec-arrow rec rec-arrow-left"
-            disabled=""
-            tabindex="0"
-            type="button"
-          >
-            ❮
-          </button>
+          ❮
+        </button>
+        <div
+          class="sc-gKseQn cpVDds rec rec-slider-container"
+        >
           <div
-            class="sc-dlfnuX bVibPY rec rec-slider-container"
+            class="sc-iBPTik VUXJj rec rec-slider"
+            style="transition:all 500ms ease;left:0px;right:auto;top:auto"
           >
             <div
-              class="sc-hKgJUU hUugPI rec rec-slider"
-              style="transition:all 500ms ease;left:0px;right:auto;top:auto"
-            >
-              <div
-                class="rec rec-swipable"
-                style="display:flex;flex-direction:row"
-              />
-            </div>
+              class="rec rec-swipable"
+              style="display:flex;flex-direction:row"
+            />
           </div>
-          <button
-            class="sc-bdfBQB eRmJbc rec rec-arrow rec rec-arrow-right"
-            disabled=""
-            tabindex="0"
-            type="button"
-          >
-            ❯
-          </button>
         </div>
-        <div
-          class="sc-iBPTik iHAfmq rec rec-pagination"
+        <button
+          class="sc-eCstlR cjTZXe rec rec-arrow rec rec-arrow-right"
+          disabled=""
+          tabindex="0"
+          type="button"
         >
-          <button
-            class="sc-gKseQn jJKuoL rec rec-dot rec rec-dot_active"
-            tabindex="-1"
-            type="button"
-          />
-        </div>
+          ❯
+        </button>
+      </div>
+      <div
+        class="sc-kEjbQP kdKhVE rec rec-pagination"
+      >
+        <button
+          class="sc-jrAFXE etbLqk rec rec-dot rec rec-dot_active"
+          tabindex="-1"
+          type="button"
+        />
       </div>
     </div>
   </section>,
@@ -292,11 +296,9 @@ Array [
 
 exports[`Home snapshot - shallow 1`] = `
 <Fragment>
-  <section
-    className="home-intro"
-  />
-  <HomeDescription />
-  <HomeGallery />
-  <HomeProducts />
+  <styled.section />
+  <Memo(HomeDescription) />
+  <Memo(HomeGallery) />
+  <Memo(HomeProducts) />
 </Fragment>
 `;

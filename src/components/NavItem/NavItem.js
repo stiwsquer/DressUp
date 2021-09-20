@@ -4,7 +4,7 @@ export default React.memo(function NavItem({ linkTo, iconClass, text }) {
   return (
     <Link to={linkTo}>
       <i className={iconClass}></i>
-      {iconClass !== undefined && iconClass !== "" && " "}
+      {iconClass && " "}
       {text}
     </Link>
   );

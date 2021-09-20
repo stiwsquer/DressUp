@@ -1,16 +1,16 @@
 import React from "react";
 import NavItem from "../NavItem/NavItem";
-import "./style.scss";
+import { UlContainer } from "./SignInRegisterSearch.style";
+
 export default React.memo(function SignInRegisterSearch({
   setShowMenu,
   showMenu,
   setShowSerch,
-  nameOfTheClass,
   searchRef,
 }) {
   const handleShowMenu = () => setShowMenu((prev) => !prev);
   return (
-    <ul className={nameOfTheClass}>
+    <UlContainer showMenu={showMenu}>
       <li onClick={handleShowMenu}>
         <NavItem
           linkTo="/signIn"
@@ -36,6 +36,6 @@ export default React.memo(function SignInRegisterSearch({
       >
         <NavItem linkTo="#" iconClass="fas fa-search" text="Search" />
       </li>
-    </ul>
+    </UlContainer>
   );
 });

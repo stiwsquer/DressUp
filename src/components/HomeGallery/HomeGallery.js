@@ -1,10 +1,10 @@
 import React from "react";
 import Button from "../Button/Button";
-import "./style.scss";
+import { HomeGallerySection } from "./HomeGallery.style";
 
 export default React.memo(function HomeGallery() {
   return (
-    <section className="home-gallery">
+    <HomeGallerySection>
       <div className="gallery-new-shoes">
         <h2>NEW SHOES</h2>
         <p>
@@ -25,6 +25,6 @@ export default React.memo(function HomeGallery() {
       <img className="gallery1" src="./img/home/gallery/gallery-1.2.jpg" />
       <img className="gallery2" src="./img/home/gallery/gallery-2.1.jpg" />
       <img className="gallery3" src="./img/home/gallery/gallery-3.1.jpg" />
-    </section>
+    </HomeGallerySection>
   );
 });

@@ -1,10 +1,18 @@
 import Button from "../Button/Button";
 import React, { useEffect, useMemo } from "react";
 import ReactDom from "react-dom";
-import "./style.scss";
+// import "./style.scss";
 import OutsideAlerter from "../OutsideAlerter/OutsideAlerter";
 // import Slider from "react-slick";
 import Carousel from "react-elastic-carousel";
+import {
+  Overlay,
+  Modal,
+  Slider,
+  Description,
+  ModalCloseButton,
+} from "./CardModal.style";
+
 export default React.memo(function CardModal({
   children,
   open,
@@ -32,20 +40,17 @@ export default React.memo(function CardModal({
 
   return ReactDom.createPortal(
     <>
-      <div className="overlay"></div>
+      <Overlay></Overlay>
       <OutsideAlerter setShowElement={setIsModalOpen}>
-        <div className="modal">
-          <Button
-            nameOfTheClass="close-modal-btn"
-            onClick={() => setIsModalOpen(false)}
-          >
+        <Modal>
+          <ModalCloseButton onClick={() => setIsModalOpen(false)}>
             <i className="fas fa-times"></i>
-          </Button>
+          </ModalCloseButton>
           {children}
-          <div className="slider">
+          <Slider>
             <Carousel breakPoints={breakPoints}>{images}</Carousel>
-          </div>
-          <div className="description">
+          </Slider>
+          <Description>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga
             voluptate, voluptatum voluptates aperiam culpa sint, tenetur esse,
             minus reiciendis praesentium recusandae deleniti error consequatur
@@ -64,8 +69,8 @@ export default React.memo(function CardModal({
             necessitatibus exercitationem nostrum non, obcaecati dignissimos
             tempore eveniet quibusdam iste neque at officia. Voluptate
             temporibus architecto dolores laborum velit veritatis!
-          </div>
-        </div>
+          </Description>
+        </Modal>
       </OutsideAlerter>
     </>,
     document.getElementById("portal")

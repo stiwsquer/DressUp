@@ -40,16 +40,7 @@ it("contains p element", () => {
   expect(wrapper.find("p")).toHaveLength(1);
 });
 
-it("renders an `.home-description`", () => {
-  const wrapper = mount(
-    <Router>
-      <HomeDescription />
-    </Router>
-  );
-  expect(wrapper.find(".home-description")).toHaveLength(1);
-});
-
-it("HomeDescription snapshop - shallow", () => {
+uit("HomeDescription snapshop - shallow", () => {
   const wrapper = shallow(
     <Router>
       <HomeDescription />

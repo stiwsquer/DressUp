@@ -1,9 +1,19 @@
 import React from "react";
-import "./style.scss";
+// import "./style.scss";
 import { Link } from "react-router-dom";
 import { useState, useRef } from "react";
 import Button from "../Button/Button";
 import CardModal from "../CardModal/CardModal";
+import {
+  StyledCard,
+  CardFigure,
+  FigCaption,
+  CardButton,
+  CardBody,
+  CardTitle,
+  CardText,
+  CardSwatches,
+} from "./Card.style";
 
 export default React.memo(function Card({
   linkTo,
@@ -23,8 +33,8 @@ export default React.memo(function Card({
   };
 
   return (
-    <div className="card">
-      <figure className="card-figure">
+    <StyledCard>
+      <CardFigure>
         <Link to={linkTo} className="card-image-link">
           <img
             className=" card-image card-image-normal"
@@ -37,12 +47,12 @@ export default React.memo(function Card({
             alt={imgAlt}
           />
         </Link>
-        <figcaption className="fig-caption">
-          <Button
+        <FigCaption>
+          <CardButton
             onClick={() => {
               setIsModalOpen(true);
             }}
-          ></Button>
+          ></CardButton>
 
           <CardModal
             open={isModalOpen}
@@ -51,22 +61,22 @@ export default React.memo(function Card({
             title={title}
             text={text}
           ></CardModal>
-        </figcaption>
-      </figure>
-      <div className="card-body">
+        </FigCaption>
+      </CardFigure>
+      <CardBody>
         <Link to={linkTo}>
-          <h4 className="card-title">{title}</h4>
+          <CardTitle>{title}</CardTitle>
         </Link>
-        <p className="card-text">{text}</p>
-      </div>
-      <div className="card-swatches">
+        <CardText>{text}</CardText>
+      </CardBody>
+      <CardSwatches>
         {imagesSources.map((source, index) => {
           return (
             <div key={index} className="radio">
               <input
                 onClick={handleInputRadioClick}
                 value={index}
-                id="radio1"
+                id="radio"
                 type="radio"
                 name="swatch"
               ></input>
@@ -80,7 +90,7 @@ export default React.memo(function Card({
             </div>
           );
         })}
-      </div>
-    </div>
+      </CardSwatches>
+    </StyledCard>
   );
 });

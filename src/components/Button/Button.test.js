@@ -5,16 +5,10 @@ it("renders Button component without crashing", () => {
   shallow(<Button />);
 });
 
-//
-
 it("simulates click events", () => {
   const onButtonClick = sinon.spy();
   const buttonWrapper = mount(
-    <Button
-      type="submit"
-      nameOfTheClass="submitButton"
-      onClick={onButtonClick}
-    />
+    <Button type="submit" className="submitButton" onClick={onButtonClick} />
   );
   buttonWrapper.find("button").simulate("click");
   // expect(onButtonClick).toHaveProperty("callCount", 1);
@@ -31,21 +25,21 @@ it("renders children when passed in", () => {
 });
 it("Button snapshot - shallow", () => {
   const tree = shallow(
-    <Button type="submit" nameOfTheClass="submitButton" onClick={() => {}} />
+    <Button type="submit" className="submitButton" onClick={() => {}} />
   );
   expect(tree).toMatchSnapshot();
 });
 
 it("Button snapshot - render", () => {
   const tree = render(
-    <Button type="submit" nameOfTheClass="submitButton" onClick={() => {}} />
+    <Button type="submit" className="submitButton" onClick={() => {}} />
   );
   expect(tree).toMatchSnapshot();
 });
 
 it("Button snapshot - mount", () => {
   const tree = mount(
-    <Button type="submit" nameOfTheClass="submitButton" onClick={() => {}} />
+    <Button type="submit" className="submitButton" onClick={() => {}} />
   );
   expect(tree).toMatchSnapshot();
 });

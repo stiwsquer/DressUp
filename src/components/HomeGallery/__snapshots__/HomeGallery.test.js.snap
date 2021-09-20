@@ -2,7 +2,7 @@
 
 exports[`HomeGallery snapshop - mount 1`] = `
 <section
-  className="home-gallery"
+  className="sc-gsTEea jpowJS"
 >
   <div
     className="gallery-new-shoes"
@@ -13,7 +13,9 @@ exports[`HomeGallery snapshop - mount 1`] = `
     <p>
       We just dropped new fall shoe styles, and they are all ON SALE! Shop new combat boots, booties, mules, sneakers & more!
     </p>
-    <button>
+    <button
+      className="sc-bdfBQB gRvcyI"
+    >
       SHOP SHOES
     </button>
   </div>
@@ -26,7 +28,9 @@ exports[`HomeGallery snapshop - mount 1`] = `
     <p>
       Take your fall outfit to the next level with new accessories! The perfect trendy handbag, dainty gold necklace, coin bracelet or statement earrings will upgrade any look.
     </p>
-    <button>
+    <button
+      className="sc-bdfBQB gRvcyI"
+    >
       SHOP ACCESSORIES
     </button>
   </div>
@@ -47,7 +51,7 @@ exports[`HomeGallery snapshop - mount 1`] = `
 
 exports[`HomeGallery snapshop - render 1`] = `
 <section
-  class="home-gallery"
+  class="sc-gsTEea jpowJS"
 >
   <div
     class="gallery-new-shoes"
@@ -58,7 +62,9 @@ exports[`HomeGallery snapshop - render 1`] = `
     <p>
       We just dropped new fall shoe styles, and they are all ON SALE! Shop new combat boots, booties, mules, sneakers & more!
     </p>
-    <button>
+    <button
+      class="sc-bdfBQB gRvcyI"
+    >
       SHOP SHOES
     </button>
   </div>
@@ -71,7 +77,9 @@ exports[`HomeGallery snapshop - render 1`] = `
     <p>
       Take your fall outfit to the next level with new accessories! The perfect trendy handbag, dainty gold necklace, coin bracelet or statement earrings will upgrade any look.
     </p>
-    <button>
+    <button
+      class="sc-bdfBQB gRvcyI"
+    >
       SHOP ACCESSORIES
     </button>
   </div>
@@ -113,6 +121,6 @@ exports[`HomeGallery snapshop - shallow 1`] = `
     }
   }
 >
-  <HomeGallery />
+  <Memo(HomeGallery) />
 </Router>
 `;

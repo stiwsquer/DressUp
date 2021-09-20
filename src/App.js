@@ -1,13 +1,15 @@
 import React from "react";
-// import "./styles/style.scss";
 import Layout from "./components/Layout/Layout";
-// import Layout from "./components/Layout";
 import { SearchContextProvider } from "./context/SearchContext";
+import { GlobalStyles } from "./GlobalStyles";
 function App() {
   return (
-    <SearchContextProvider>
-      <Layout />
-    </SearchContextProvider>
+    <>
+      <GlobalStyles />
+      <SearchContextProvider>
+        <Layout />
+      </SearchContextProvider>
+    </>
   );
 }
 

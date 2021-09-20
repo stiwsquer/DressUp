@@ -1,11 +1,11 @@
 import React from "react";
 import NavItem from "../NavItem/NavItem";
-import "./style.scss";
+import { FooterSection, FooterWrapper } from "./Footer.style";
 
 export default React.memo(function Footer() {
   return (
-    <footer>
-      <div className="footer-wrapper">
+    <FooterSection>
+      <FooterWrapper>
         <h1>
           <NavItem text="DressUp" linkTo="/" /> &copy;
         </h1>
@@ -20,7 +20,7 @@ export default React.memo(function Footer() {
             <NavItem iconClass="fab fa-youtube social-media" linkTo="#" />
           </li>
         </ul>
-      </div>
-    </footer>
+      </FooterWrapper>
+    </FooterSection>
   );
 });

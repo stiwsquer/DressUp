@@ -3,11 +3,12 @@ import { Link } from "react-router-dom";
 import Button from "../Button/Button";
 import Input from "../Input/Input";
 import NewCustomerInfo from "../NewCustomerInfo/NewCustomerInfo";
-import "./style.scss";
+import { SignInForm, SignInSection } from "./SignIn.style";
+
 export default React.memo(function SignIn() {
   return (
-    <section className="sign-in-page">
-      <form className="sign-in-form">
+    <SignInSection>
+      <SignInForm>
         <Input isRequired={true} inputType="email" inputId="email">
           Email Address:
         </Input>
@@ -19,8 +20,8 @@ export default React.memo(function SignIn() {
         <Link className="remind-password" to="#">
           Forgot your password?
         </Link>
-      </form>
+      </SignInForm>
       <NewCustomerInfo />
-    </section>
+    </SignInSection>
   );
 });
