@@ -40,7 +40,7 @@ it("contains p element", () => {
   expect(wrapper.find("p")).toHaveLength(1);
 });
 
-uit("HomeDescription snapshop - shallow", () => {
+it("HomeDescription snapshop - shallow", () => {
   const wrapper = shallow(
     <Router>
       <HomeDescription />

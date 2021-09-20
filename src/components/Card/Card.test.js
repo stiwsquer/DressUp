@@ -33,17 +33,3 @@ it("contains h4 element", () => {
   );
   expect(wrapper.find("h4")).toHaveLength(1);
 });
-
-// it("Card snapshot", () => {
-//   const component = render(
-//     <MemoryRouter>
-//       <Card linkTo="#" imagesSources={imgSrc} />
-//     </MemoryRouter>
-//   );
-
-//   expect(component).toMatchSnapshot();
-
-//   component.find("figure").simulate("hover");
-
-//   expect(component).toMatchSnapshot();
-// });
