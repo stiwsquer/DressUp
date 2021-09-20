@@ -12,7 +12,7 @@ export default React.memo(function SearchBox({ className }) {
         inputId="search"
         inputType="search"
         placeholder="Search"
-        autoFocus={true}
+        autoFocus
       />
     </SearchBoxWrapper>
   );

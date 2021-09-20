@@ -145,9 +145,13 @@ nav {
   }
 `;
 
-export const flex = ({ direction, justify, align }) => `
+export const flex = ({
+  direction = "row",
+  justify = "stretch",
+  align = "stretch",
+}) => `
     display: flex;
-    flex-direction:${direction || "row"} ;
-    justify-content: ${justify || "stretch"};
-    align-items: ${align || "stretch"};
+    flex-direction:${direction} ;
+    justify-content: ${justify};
+    align-items: ${align};
 `;
