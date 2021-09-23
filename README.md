@@ -9,7 +9,7 @@ E-Commerce app for buying dresses, jackets and other clothes for women. Introduc
 
 ## Technologies and Libraries
 
-React, react-elastic-carousel, eslint, styled-components, react-router-dom, enzyme, jest, sinon, node-sass and more.
+JavaScript, HTML5, CSS3, React, react-elastic-carousel, eslint, styled-components, react-router-dom, enzyme, jest, sinon, node-sass and more.
 
 ## Appearance
 ### Starting page
