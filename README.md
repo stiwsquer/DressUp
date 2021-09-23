@@ -7,7 +7,7 @@
 
 E-Commerce app for buying dresses, jackets and other clothes for women. Introduction Slider Dynamic Banner, New Arrivals etc.
 
-## Used libraries
+## Technologies and Libraries
 
 React, react-elastic-carousel, eslint, styled-components, react-router-dom, enzyme, jest, sinon, node-sass and more.
 
