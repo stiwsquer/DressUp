@@ -11,6 +11,7 @@ export const FooterWrapper = styled.div`
   min-height: 15vh;
   width: 95%;
   margin: auto;
+  font-size: 2.5rem;
 
   ${flex({ justify: "space-between", align: "center" })}
   flex-wrap: wrap;
