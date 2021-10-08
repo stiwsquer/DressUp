@@ -1,25 +1,41 @@
 import Button from "../Button/Button";
 import React, { useEffect, useMemo } from "react";
 import ReactDom from "react-dom";
-// import "./style.scss";
 import OutsideAlerter from "../OutsideAlerter/OutsideAlerter";
-// import Slider from "react-slick";
-import Carousel from "react-elastic-carousel";
+import ResponsiveCarousel from "../ResponsiveCarousel/ResponsiveCarousel";
+import CardSwatches from "../CardSwatches/CardSwatches";
+// import Carousel from "react-elastic-carousel";
 import {
   Overlay,
   Modal,
   Slider,
   Description,
   ModalCloseButton,
+  ModalBody,
+  Adjust,
 } from "./CardModal.style";
+import { useState } from "react";
+import Input from "../Input/Input";
 
 export default React.memo(function CardModal({
   children,
   open,
   setIsModalOpen,
   imagesSources,
+  title,
+  text,
 }) {
   if (!open) return null;
+
+  const [quantity, setQuantity] = useState(0);
+
+  const addOne = () => {
+    setQuantity(quantity + 1);
+  };
+
+  const subtractOne = () => {
+    if (quantity > 0) setQuantity(quantity - 1);
+  };
 
   const breakPoints = useMemo(() => {
     return [{ width: 1, itemsToShow: 1 }];
@@ -33,6 +49,7 @@ export default React.memo(function CardModal({
         <img key={source.srcHover} src={source.srcHover} alt="" />
       );
     });
+
     return temporaryImages;
   }, []);
 
@@ -44,30 +61,46 @@ export default React.memo(function CardModal({
           <ModalCloseButton onClick={() => setIsModalOpen(false)}>
             <i className="fas fa-times"></i>
           </ModalCloseButton>
-          {children}
-          <Slider>
-            <Carousel breakPoints={breakPoints}>{images}</Carousel>
-          </Slider>
-          <Description>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga
-            voluptate, voluptatum voluptates aperiam culpa sint, tenetur esse,
-            minus reiciendis praesentium recusandae deleniti error consequatur
-            rem mollitia dolorem perferendis at blanditiis sapiente quibusdam.
-            Enim nostrum non impedit magni at animi, facere, eos id distinctio
-            ipsa minus itaque earum! Ratione, molestias dolorum fugit expedita
-            libero veniam natus non perspiciatis aliquid sit ea provident
-            asperiores quas magnam molestiae, eaque at modi similique dolore!
-            Quae magni esse officiis deserunt necessitatibus. Itaque deleniti
-            quas ea, dignissimos tempore repudiandae minus debitis rem fugiat
-            exercitationem tenetur veritatis eaque expedita natus, nesciunt in
-            qui hic. Labore cupiditate, sunt ad, blanditiis nihil vel magni
-            expedita dolores dolore doloremque consequatur iure neque ab
-            explicabo perferendis natus error cumque. Laudantium velit quas
-            asperiores. Magnam culpa fuga nihil iusto eaque itaque nemo
-            necessitatibus exercitationem nostrum non, obcaecati dignissimos
-            tempore eveniet quibusdam iste neque at officia. Voluptate
-            temporibus architecto dolores laborum velit veritatis!
-          </Description>
+
+          <ModalBody>
+            <Slider>
+              <ResponsiveCarousel>{images}</ResponsiveCarousel>
+            </Slider>
+            <Description>
+              <h1>{title}</h1>
+              <h2>{text}</h2>
+              <p>
+                You&apos;re going to be wildly in love with the Tame My Heart
+                Leopard Tie-Front Dress! This cute dress is designed with a
+                lightweight and stretchy knit in a trendy leopard print. It
+                features a crew neckline, short sleeves, and a relaxed fit with
+                a functional tie front detail. Style the Tame My Heart Dress
+                with sneakers for a more casual look, or dress it up with heels
+                and a gold jewelry!
+              </p>
+              <Adjust>
+                <form>
+                  <span>
+                    <p>COLOR:</p>
+                    <CardSwatches imagesSources={imagesSources}></CardSwatches>
+                  </span>
+                  <span>
+                    <p>SIZE:</p>
+                    <Button>Small</Button>
+                    <Button>Medium</Button>
+                    <Button>Large</Button>
+                  </span>
+                  <span className="quantity">
+                    <p>QUANTITY:</p>
+                    <Button onClick={subtractOne}>-</Button>
+                    <span>{quantity}</span>
+                    <Button onClick={addOne}>+</Button>
+                  </span>
+                  <Button type="submit">ADD TO CART</Button>
+                </form>
+              </Adjust>
+            </Description>
+          </ModalBody>
         </Modal>
       </OutsideAlerter>
     </>,
