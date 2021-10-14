@@ -6,14 +6,14 @@ it("renders Input component without crashing", () => {
 
 it("evoke on change function - sinon", () => {
   const onChangeFunc = sinon.spy();
-  const wrapper = mount(<Input onInputChange={onChangeFunc} />);
+  const wrapper = mount(<Input onChange={onChangeFunc} />);
   wrapper.find("input").first().simulate("change");
   expect(onChangeFunc.calledOnce).toBe(true);
 });
 
 it("evoke on change function - jest.fn", () => {
   const onChangeFunc = jest.fn();
-  const wrapper = mount(<Input onInputChange={onChangeFunc} />);
+  const wrapper = mount(<Input onChange={onChangeFunc} />);
   wrapper.find("input").first().simulate("change");
   expect(onChangeFunc).toHaveBeenCalledTimes(1);
 });

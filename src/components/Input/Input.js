@@ -6,7 +6,7 @@ export default React.memo(function Input({
   inputType,
   placeholder,
   inputValue,
-  onInputChange,
+  onChange,
   autoFocus,
   children,
 }) {
@@ -18,7 +18,7 @@ export default React.memo(function Input({
         type={inputType}
         placeholder={placeholder}
         value={inputValue}
-        onChange={onInputChange}
+        onChange={onChange}
         required={isRequired}
         autoFocus={autoFocus}
       />

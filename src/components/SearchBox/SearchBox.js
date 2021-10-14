@@ -8,7 +8,7 @@ export default React.memo(function SearchBox({ className }) {
     <SearchBoxWrapper className={className}>
       <Input
         inputValue={input}
-        onInputChange={setSearchInput}
+        onChange={setSearchInput}
         inputId="search"
         inputType="search"
         placeholder="Search"

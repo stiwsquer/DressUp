@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Redirect } from "react-router";
 import Button from "../Button/Button";
 import Input from "../Input/Input";
 import Select from "../Select/Select";
@@ -6,57 +7,92 @@ import { RegisterForm, FormWrapper, RegisterSection } from "./Register.style";
 export default React.memo(function Register() {
   const [countryOptions, setCountryOptions] = useState([]);
   const [months, setMonths] = useState([]);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [redirect, setRedirect] = useState(false);
 
-  const getCountries = async () => {
-    try {
-      let res = await fetch("https://restcountries.eu/rest/v2/all");
-      res = await res.json();
-      setCountryOptions(
-        res.map((country) => {
-          return {
-            key: country.alpha2Code,
-            value: country.alpha2Code,
-            text: country.name,
-          };
-        })
-      );
-    } catch (err) {
-      console.log(err);
-    }
+  const submit = async (e) => {
+    e.preventDefault();
+    // const respone = await fetch("http://localhost:4000/api/register", {
+    //   method: 'POST',
+    //   headers: {'Content-Type': 'application/json'},
+    //   body: JSON.stringify({
+    //     email,
+    //     password
+    //   })
+    // })
+    // const content = await respone.json();
+    // setRedirect(true);
   };
-  useEffect(getCountries, []);
 
-  const getMonths = async () => {
-    try {
-      let res = await fetch("./months.json");
-      res = await res.json();
-      setMonths(
-        res.map((month) => {
-          return {
-            key: month.abbreviation,
-            value: country.abbreviation,
-            text: month.name,
-          };
-        })
-      );
-    } catch (err) {
-      console.log(err);
-    }
-  };
-  useEffect(getMonths, []);
+  if (redirect) {
+    return <Redirect to="/signIn" />;
+  }
+
+  // const getCountries = async () => {
+  //   try {
+  //     let res = await fetch("https://restcountries.eu/rest/v2/all");
+  //     res = await res.json();
+  //     setCountryOptions(
+  //       res.map((country) => {
+  //         return {
+  //           key: country.alpha2Code,
+  //           value: country.alpha2Code,
+  //           text: country.name,
+  //         };
+  //       })
+  //     );
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
+  // useEffect(getCountries, []);
+
+  // const getMonths = async () => {
+  //   try {
+  //     let res = await fetch("./months.json");
+  //     res = await res.json();
+  //     setMonths(
+  //       res.map((month) => {
+  //         return {
+  //           key: month.abbreviation,
+  //           value: country.abbreviation,
+  //           text: month.name,
+  //         };
+  //       })
+  //     );
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
+  // useEffect(getMonths, []);
 
   return (
     <RegisterSection>
-      <RegisterForm>
+      <RegisterForm onSubmit={submit}>
         <FormWrapper>
-          <Input isRequired inputType="email" inputId="email">
+          <Input
+            isRequired
+            inputType="email"
+            inputId="email"
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+          >
             Email Adress
           </Input>
 
-          <Input isRequired inputType="password" inputId="password">
+          <Input
+            isRequired
+            inputType="password"
+            inputId="password"
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+          >
             Password
           </Input>
-          <Input isRequired inputType="password" inputId="confirm_password">
+          {/* <Input isRequired inputType="password" inputId="confirm_password">
             Confirm Password
           </Input>
           <Select
@@ -98,7 +134,7 @@ export default React.memo(function Register() {
           </Input>
           <Input isRequired inputType="text" inputId="zip">
             Zip/Postcode
-          </Input>
+          </Input> */}
         </FormWrapper>
         <Button type="submit">CREATE ACCOUNT</Button>
       </RegisterForm>
