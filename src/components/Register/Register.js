@@ -13,16 +13,17 @@ export default React.memo(function Register() {
 
   const submit = async (e) => {
     e.preventDefault();
-    // const respone = await fetch("http://localhost:4000/api/register", {
-    //   method: 'POST',
-    //   headers: {'Content-Type': 'application/json'},
-    //   body: JSON.stringify({
-    //     email,
-    //     password
-    //   })
-    // })
-    // const content = await respone.json();
-    // setRedirect(true);
+    const respone = await fetch("http://localhost:3002/register", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email,
+        password,
+      }),
+    });
+    const content = await respone.json();
+    console.log(content);
+    setRedirect(true);
   };
 
   if (redirect) {

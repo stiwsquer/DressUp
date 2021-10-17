@@ -4,6 +4,7 @@ import OutsideAlerter from "../OutsideAlerter/OutsideAlerter";
 import SearchBox from "../SearchBox/SearchBox";
 import SignInRegisterSearch from "../SignInRegisterSearch/SignInRegisterSearch";
 import { NavLinks, Burger } from "./Navigation.style";
+
 export default React.memo(function Navigation() {
   const [showMenu, setShowMenu] = useState(false);
   const [showSearch, setShowSerch] = useState(false);
@@ -44,16 +45,3 @@ export default React.memo(function Navigation() {
     </>
   );
 });
-
-// function useWindowSize() {
-//   const [size, setSize] = useState([0, 0]);
-//   useLayoutEffect(() => {
-//     function updateSize() {
-//       setSize([window.innerWidth, window.innerHeight]);
-//     }
-//     window.addEventListener("resize", updateSize);
-//     updateSize();
-//     return () => window.removeEventListener("resize", updateSize);
-//   }, []);
-//   return size;
-// }

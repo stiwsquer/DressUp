@@ -1,7 +1,8 @@
-import React from "react";
-import { useLoginContext } from "../../context/LoginContext";
+import React, { useRef, useState } from "react";
 import NavItem from "../NavItem/NavItem";
 import { UlContainer } from "./SignInRegisterSearch.style";
+import Cookies from "js-cookie";
+import { useLoginContext } from "../../context/LoginContext";
 
 export default React.memo(function SignInRegisterSearch({
   setShowMenu,
@@ -9,26 +10,21 @@ export default React.memo(function SignInRegisterSearch({
   setShowSerch,
   searchRef,
 }) {
-  const accessToken = useLoginContext()[0];
-  const setAccessToken = useLoginContext()[1];
+  const [isUserLoggedIn, updateUserStatus] = useLoginContext();
 
   const handleShowMenu = () => setShowMenu((prev) => !prev);
 
   const logOut = async () => {
     handleShowMenu();
     //logout from the server
-    await fetch("http://localhost:4000/logout", {
+    await fetch("http://localhost:3002/logout", {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
       },
       credentials: "include",
-      body: JSON.stringify({
-        token: accessToken,
-      }),
     });
-    //set access token to null
-    setAccessToken(null);
+    updateUserStatus(false);
   };
 
   const searchBox = (
@@ -44,7 +40,7 @@ export default React.memo(function SignInRegisterSearch({
   );
 
   let menu;
-  if (accessToken) {
+  if (isUserLoggedIn) {
     menu = (
       <>
         <li onClick={logOut}>
@@ -69,6 +65,7 @@ export default React.memo(function SignInRegisterSearch({
           <NavItem linkTo="/register" text="Register" />
         </li>
         <li className="vertical-line">|</li>
+
         {searchBox}
       </>
     );

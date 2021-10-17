@@ -1,33 +1,30 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router";
 import { Link } from "react-router-dom";
-import { useLoginContext } from "../../context/LoginContext";
 import Button from "../Button/Button";
 import Input from "../Input/Input";
 import NewCustomerInfo from "../NewCustomerInfo/NewCustomerInfo";
 import { SignInForm, SignInSection } from "./SignIn.style";
+import { useLoginContext } from "../../context/LoginContext";
 
 export default React.memo(function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [redirect, setRedirect] = useState(false);
-  const setAccessToken = useLoginContext()[1];
-  const setRefreshToken = useLoginContext()[3];
+  const [isUserLoggedIn, updateUserStatus] = useLoginContext();
 
   const submit = async (e) => {
     e.preventDefault();
-    const respone = await fetch("http://localhost:4000/login", {
+    const respone = await fetch("http://localhost:3002/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",
       body: JSON.stringify({
-        username: email,
+        email: email,
+        password: password,
       }),
     });
-
-    const content = await respone.json();
-    setAccessToken(content.accessToken);
-    setRefreshToken(content.refreshToken);
+    updateUserStatus(true);
     setRedirect(true);
   };
 
