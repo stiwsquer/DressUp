@@ -19,7 +19,7 @@ JavaScript, HTML5, CSS3, React, react-elastic-carousel, eslint, styled-component
 
 ![image](https://user-images.githubusercontent.com/50952730/134468381-6eda3c46-e1fc-48c4-9c78-b5f27e6d8cf2.png)
 
-![image](https://user-images.githubusercontent.com/50952730/134469385-7c5b23f8-5d9f-4073-93f3-041b54d14f73.png)
+<!-- ![image](https://user-images.githubusercontent.com/50952730/134469385-7c5b23f8-5d9f-4073-93f3-041b54d14f73.png) -->
 
 ### Sign in page
 
