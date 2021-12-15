@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { flex } from "../../GlobalStyles";
+import styled from 'styled-components';
+import { flex } from '../../GlobalStyles';
 
 export const HomeDescriptionSection = styled.section`
   min-height: 40vh;
@@ -8,7 +8,7 @@ export const HomeDescriptionSection = styled.section`
   text-align: center;
   line-height: 3rem;
 
-  ${flex({ direction: "column", justify: "center", align: "center" })}
+  ${flex({ direction: 'column', justify: 'center', align: 'center' })}
 
   h2 {
     font-size: 2.5rem;
@@ -21,3 +21,4 @@ export const HomeDescriptionSection = styled.section`
     margin: 4rem;
   }
 `;
+export default HomeDescriptionSection;

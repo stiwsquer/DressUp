@@ -1,9 +1,9 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
-import Carousel from "react-elastic-carousel";
-import Card from "../Card/Card";
-import { ProductsSection, ProductsTitle } from "./HomeProducts.style";
+import React, { useEffect, useState } from 'react';
+import Carousel from 'react-elastic-carousel';
+import Card from '../Card/Card';
+import { ProductsSection, ProductsTitle } from './HomeProducts.style';
 
-export default React.memo(function HomeProducts() {
+export default React.memo(() => {
   const [cards, setCards] = useState([]);
   const breakPoints = [
     { width: 1, itemsToShow: 1 },
@@ -17,22 +17,23 @@ export default React.memo(function HomeProducts() {
 
   const getProducts = async () => {
     try {
-      let res = await fetch("/products.json");
+      let res = await fetch('/products.json');
       res = await res.json();
-      const cards = res.map((card, index) => (
+      const cardList = res.map((card) => (
         <Card
-          key={index}
+          key={card.images.src}
           linkTo="#"
           title={card.title}
           text={card.text}
           imagesSources={card.images}
           imgAlt={card.imgAlt}
-        ></Card>
+        />
       ));
-      setCards(cards);
-      return cards;
+      setCards(cardList);
+      return cardList;
     } catch (err) {
       console.log(err);
+      return null;
     }
   };
   useEffect(getProducts, []);
@@ -40,9 +41,9 @@ export default React.memo(function HomeProducts() {
   return (
     <ProductsSection>
       <ProductsTitle>
-        <span className="horizontal-line"></span>
+        <span className="horizontal-line" />
         <h2>NEW PRODUCTS</h2>
-        <span className="horizontal-line"></span>
+        <span className="horizontal-line" />
       </ProductsTitle>
 
       <Carousel breakPoints={breakPoints}>{cards}</Carousel>

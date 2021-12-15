@@ -1,8 +1,8 @@
-import styled from "styled-components";
-import { flex } from "../../GlobalStyles";
+import styled from 'styled-components';
+import { flex } from '../../GlobalStyles';
 
 export const SearchBoxWrapper = styled.div`
-  ${flex({ align: "center", justify: "center" })};
+  ${flex({ align: 'center', justify: 'center' })};
   position: absolute;
   left: 0;
   top: 20vh;
@@ -21,3 +21,4 @@ export const SearchBoxWrapper = styled.div`
     border: 0.1rem solid black;
   }
 `;
+export default SearchBoxWrapper;

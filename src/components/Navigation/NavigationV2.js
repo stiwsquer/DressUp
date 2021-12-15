@@ -1,11 +1,11 @@
-import React, { useLayoutEffect, useState, useRef } from "react";
-import NavItem from "../NavItem/NavItem";
-import OutsideAlerter from "../OutsideAlerter/OutsideAlerter";
-import SearchBox from "../SearchBox/SearchBox";
-import SignInRegisterSearch from "../SignInRegisterSearch/SignInRegisterSearch";
-import { NavLinks, Burger } from "./Navigation.style";
+import React, { useLayoutEffect, useState, useRef } from 'react';
+import NavItem from '../NavItem/NavItem';
+import OutsideAlerter from '../OutsideAlerter/OutsideAlerter';
+import SearchBox from '../SearchBox/SearchBox';
+import SignInRegisterSearch from '../SignInRegisterSearch/SignInRegisterSearch';
+import { NavLinks, Burger } from './Navigation.style';
 
-export default React.memo(function Navigation() {
+export default React.memo(() => {
   const [showMenu, setShowMenu] = useState(false);
   const [showSearch, setShowSerch] = useState(false);
   const searchRef = useRef();
@@ -17,9 +17,9 @@ export default React.memo(function Navigation() {
       <NavLinks>
         <Burger onClick={handleShowMenu}>
           <i
-            style={{ position: showMenu ? "fixed" : "" }}
-            className={showMenu ? "fas fa-times" : "fas fa-bars"}
-          ></i>
+            style={{ position: showMenu ? 'fixed' : '' }}
+            className={showMenu ? 'fas fa-times' : 'fas fa-bars'}
+          />
         </Burger>
         <SignInRegisterSearch
           searchRef={searchRef}

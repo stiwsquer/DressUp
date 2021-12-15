@@ -1,9 +1,9 @@
-import styled from "styled-components";
-import { flex } from "../../GlobalStyles";
-import { InputWrapper } from "../Input/Input.style";
+import styled from 'styled-components';
+import { flex } from '../../GlobalStyles';
+import InputWrapper from '../Input/Input.style';
 
 export const NewsLetterFormWrapper = styled.form`
-  ${flex({ justify: "space-between", align: "center" })};
+  ${flex({ justify: 'space-between', align: 'center' })};
 
   min-height: 10vh;
   width: 95%;
@@ -21,7 +21,7 @@ export const NewsLetterFormWrapper = styled.form`
   }
 
   div {
-    ${flex({ justify: "center", align: "center" })};
+    ${flex({ justify: 'center', align: 'center' })};
   }
   input {
     margin: 2rem 0rem;
@@ -54,6 +54,7 @@ export const NewsLetterFormWrapper = styled.form`
   }
 
   @media screen and (max-width: 1378px) {
-    ${flex({ direction: "column", justify: "space-between", align: "center" })};
+    ${flex({ direction: 'column', justify: 'space-between', align: 'center' })};
   }
 `;
+export default NewsLetterFormWrapper;

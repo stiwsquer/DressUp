@@ -1,8 +1,9 @@
-import React, { useContext } from "react";
-import Input from "../Input/Input";
-import { useSearchContext } from "../../context/SearchContext";
-import { SearchBoxWrapper } from "./SearchBox.style";
-export default React.memo(function SearchBox({ className }) {
+import React from 'react';
+import Input from '../Input/Input';
+import { useSearchContext } from '../../context/SearchContext';
+import { SearchBoxWrapper } from './SearchBox.style';
+
+export default React.memo(({ className }) => {
   const [input, setSearchInput] = useSearchContext();
   return (
     <SearchBoxWrapper className={className}>

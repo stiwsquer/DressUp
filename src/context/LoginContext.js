@@ -1,25 +1,29 @@
-import React, { useState, createContext, useContext } from "react";
-import useCookie from "../hooks/useCookie/useCookie";
-import Cookies from "js-cookie";
+import React, { useState, createContext, useContext } from 'react';
 
 const LoginContext = createContext();
 
-export const useLoginContext = () => {
-  return useContext(LoginContext);
+export const useLoginContext = () => useContext(LoginContext);
+
+export const verifyToken = async () => {
+  try {
+    const res = await fetch('http://localhost:3002/verify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
+    });
+    return res.ok;
+  } catch (err) {
+    console.log(err);
+    return null;
+  }
 };
 
 export const LoginContextProvider = ({ children }) => {
-  const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
+  const [isUserLoggedIn, setIsUserLoggedIn] = useState();
 
-  function updateUserStatus(isUserLoggedIn) {
-    // if (
-    //   Cookies.get("access_token") != undefined &&
-    //   Cookies.get("refresh_token") != undefined
-    // ) {
-    setIsUserLoggedIn(isUserLoggedIn);
-    // } else {
-    // setIsUserLoggedIn(false);
-    // }
+  async function updateUserStatus() {
+    const res = await verifyToken();
+    setIsUserLoggedIn(res);
   }
 
   return (
@@ -27,4 +31,18 @@ export const LoginContextProvider = ({ children }) => {
       {children}
     </LoginContext.Provider>
   );
+};
+
+export const refreshTokenAndFetch = async (url, options) => {
+  try {
+    await fetch('http://localhost:3002/token', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
+    });
+    return await fetch(url, options);
+  } catch (err) {
+    console.log(err);
+    return null;
+  }
 };

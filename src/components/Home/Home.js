@@ -1,37 +1,23 @@
-import React, { useEffect, useState } from "react";
-// import "./style.scss";
-import { HomeIntro } from "./Home.style";
+import React, { useEffect, useState } from 'react';
+import { HomeIntro } from './Home.style';
+import { refreshTokenAndFetch } from '../../context/LoginContext';
 
-import HomeDescription from "../HomeDescription/HomeDescription";
-import HomeGallery from "../HomeGallery/HomeGallery";
-import HomeProducts from "../HomeProducts/HomeProducts";
-import Button from "../Button/Button";
+import HomeDescription from '../HomeDescription/HomeDescription';
+import HomeGallery from '../HomeGallery/HomeGallery';
+import HomeProducts from '../HomeProducts/HomeProducts';
+import Button from '../Button/Button';
 
-export default React.memo(function Home() {
-  const [name, setName] = useState("");
-
-  const refreshToken = async () => {
-    try {
-      let res = await fetch("http://localhost:3002/token", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        credentials: "include",
-      });
-      console.log(res);
-    } catch (e) {
-      console.log(e);
-    }
-  };
+export default React.memo(() => {
+  const [name, setName] = useState('');
 
   useEffect(() => {
     (async () => {
       try {
-        let res = await fetch("http://localhost:3001/user", {
+        let res = await refreshTokenAndFetch('http://localhost:3001/user', {
           headers: {
-            "Content-Type": "application/json",
-            // authorization: `Bearer ${accessToken}`,
+            'Content-Type': 'application/json',
           },
-          credentials: "include",
+          credentials: 'include',
         });
 
         res = await res.json();
@@ -43,15 +29,27 @@ export default React.memo(function Home() {
     })();
   }, []);
 
-  let button;
-  if (name) {
-    button = <Button onClick={refreshToken}>REFRESH ACCESS TOKEN</Button>;
-  }
+  const fetchData = async () => {
+    try {
+      let res = await refreshTokenAndFetch('http://localhost:3001/user', {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        credentials: 'include',
+      });
+
+      res = await res.json();
+      console.log(res);
+      setName(JSON.stringify(res.filter((user) => user.email.length < 4)));
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <>
-      {button}
-      <h1>{name ? `Hi ${name}` : "You are not logged in"}</h1>
+      <h1>{name ? `Hi ${name}` : 'You are not logged in'}</h1>
+      <Button onClick={fetchData}>Fetch Data</Button>
       <HomeIntro />
       <HomeDescription />
       <HomeGallery />
