@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { flex } from '../../GlobalStyles';
-import InputWrapper from '../Input/Input.style';
+import { InputWrapper } from '../Input/Input.style';
 
 export const NewsLetterFormWrapper = styled.form`
   ${flex({ justify: 'space-between', align: 'center' })};

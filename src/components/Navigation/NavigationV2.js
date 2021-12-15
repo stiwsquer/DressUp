@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import NavItem from '../NavItem/NavItem';
 import OutsideAlerter from '../OutsideAlerter/OutsideAlerter';
 import SearchBox from '../SearchBox/SearchBox';

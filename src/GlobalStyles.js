@@ -1,8 +1,8 @@
-import styled, { createGlobalStyle } from "styled-components";
-import Karla200 from "./static/fonts/karla/Karla-ExtraLight.ttf";
-import Karla300 from "./static/fonts/karla/Karla-Light.ttf";
-import Karla400 from "./static/fonts/karla/Karla-Regular.ttf";
-import Karla800 from "./static/fonts/karla/Karla-Bold.ttf";
+import { createGlobalStyle } from 'styled-components';
+import Karla200 from './static/fonts/karla/Karla-ExtraLight.ttf';
+import Karla300 from './static/fonts/karla/Karla-Light.ttf';
+import Karla400 from './static/fonts/karla/Karla-Regular.ttf';
+import Karla800 from './static/fonts/karla/Karla-Bold.ttf';
 
 export const GlobalStyles = createGlobalStyle`
 @font-face {
@@ -146,9 +146,9 @@ nav {
 `;
 
 export const flex = ({
-  direction = "row",
-  justify = "stretch",
-  align = "stretch",
+  direction = 'row',
+  justify = 'stretch',
+  align = 'stretch',
 }) => `
     display: flex;
     flex-direction:${direction} ;
