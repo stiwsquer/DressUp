@@ -20,7 +20,7 @@ export default React.memo(
     const logOut = async () => {
       handleShowMenu();
       // logout from the server
-      await fetch('http://localhost:3002/logout', {
+      await fetch('http://localhost:3001/logout', {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',

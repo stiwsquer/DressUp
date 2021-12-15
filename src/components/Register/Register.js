@@ -1,20 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { Redirect } from 'react-router';
 import Button from '../Button/Button';
 import Input from '../Input/Input';
-import Select from '../Select/Select';
 import { RegisterForm, FormWrapper, RegisterSection } from './Register.style';
 
 export default React.memo(() => {
-  const [countryOptions, setCountryOptions] = useState([]);
-  const [months, setMonths] = useState([]);
+  // const [countryOptions, setCountryOptions] = useState([]);
+  // const [months, setMonths] = useState([]);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [redirect, setRedirect] = useState(false);
 
   const submit = async (e) => {
     e.preventDefault();
-    const respone = await fetch('http://localhost:3002/register', {
+    const respone = await fetch('http://localhost:3001/register', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

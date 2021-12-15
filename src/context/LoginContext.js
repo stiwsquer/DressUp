@@ -6,7 +6,7 @@ export const useLoginContext = () => useContext(LoginContext);
 
 export const verifyToken = async () => {
   try {
-    const res = await fetch('http://localhost:3002/verify', {
+    const res = await fetch('http://localhost:3001/verify', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       credentials: 'include',
@@ -35,7 +35,7 @@ export const LoginContextProvider = ({ children }) => {
 
 export const refreshTokenAndFetch = async (url, options) => {
   try {
-    await fetch('http://localhost:3002/token', {
+    await fetch('http://localhost:3001/token', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       credentials: 'include',
