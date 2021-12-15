@@ -1,75 +1,78 @@
-import React, { useRef, useState } from "react";
-import NavItem from "../NavItem/NavItem";
-import { UlContainer } from "./SignInRegisterSearch.style";
-import Cookies from "js-cookie";
-import { useLoginContext } from "../../context/LoginContext";
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+import React, { useLayoutEffect, useState } from 'react';
+import NavItem from '../NavItem/NavItem';
+import { UlContainer } from './SignInRegisterSearch.style';
+import { verifyToken } from '../../context/LoginContext';
 
-export default React.memo(function SignInRegisterSearch({
-  setShowMenu,
-  showMenu,
-  setShowSerch,
-  searchRef,
-}) {
-  const [isUserLoggedIn, updateUserStatus] = useLoginContext();
+export default React.memo(
+  ({ setShowMenu, showMenu, setShowSerch, searchRef }) => {
+    const [loggedIn, setLoggedIn] = useState(false);
 
-  const handleShowMenu = () => setShowMenu((prev) => !prev);
+    const handleShowMenu = () => setShowMenu((prev) => !prev);
 
-  const logOut = async () => {
-    handleShowMenu();
-    //logout from the server
-    await fetch("http://localhost:3002/logout", {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      credentials: "include",
-    });
-    updateUserStatus(false);
-  };
+    useLayoutEffect(() => {
+      (async () => {
+        setLoggedIn(await verifyToken());
+      })();
+    }, []);
 
-  const searchBox = (
-    <li
-      onClick={() => {
-        setShowMenu(!showMenu);
-        setShowSerch((prev) => !prev);
-      }}
-      ref={searchRef}
-    >
-      <NavItem linkTo="#" iconClass="fas fa-search" text="Search" />
-    </li>
-  );
+    const logOut = async () => {
+      handleShowMenu();
+      // logout from the server
+      await fetch('http://localhost:3002/logout', {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        credentials: 'include',
+      });
+    };
 
-  let menu;
-  if (isUserLoggedIn) {
-    menu = (
-      <>
-        <li onClick={logOut}>
-          <NavItem linkTo="/signIn" text="Log out" />
-        </li>
-        <li className="vertical-line">|</li>
-        {searchBox}
-      </>
+    const searchBox = (
+      <li
+        onClick={() => {
+          setShowMenu(!showMenu);
+          setShowSerch((prev) => !prev);
+        }}
+        ref={searchRef}
+      >
+        <NavItem linkTo="#" iconClass="fas fa-search" text="Search" />
+      </li>
     );
-  } else {
-    menu = (
-      <>
-        <li onClick={handleShowMenu}>
-          <NavItem
-            linkTo="/signIn"
-            iconClass="fas fa-sign-in-alt"
-            text="Sign in"
-          />
-        </li>
-        <li className="vertical-line">|</li>
-        <li onClick={handleShowMenu}>
-          <NavItem linkTo="/register" text="Register" />
-        </li>
-        <li className="vertical-line">|</li>
 
-        {searchBox}
-      </>
-    );
-  }
+    let menu;
+    if (loggedIn) {
+      menu = (
+        <>
+          <li onClick={logOut}>
+            <NavItem linkTo="/signIn" text="Log out" />
+          </li>
+          <li className="vertical-line">|</li>
+          {searchBox}
+        </>
+      );
+    } else {
+      menu = (
+        <>
+          <li onClick={handleShowMenu}>
+            <NavItem
+              linkTo="/signIn"
+              iconClass="fas fa-sign-in-alt"
+              text="Sign in"
+            />
+          </li>
+          <li className="vertical-line">|</li>
+          <li onClick={handleShowMenu}>
+            <NavItem linkTo="/register" text="Register" />
+          </li>
+          <li className="vertical-line">|</li>
 
-  return <UlContainer showMenu={showMenu}>{menu}</UlContainer>;
-});
+          {searchBox}
+        </>
+      );
+    }
+
+    return <UlContainer showMenu={showMenu}>{menu}</UlContainer>;
+  },
+);

@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { flex } from "../../GlobalStyles";
+import styled from 'styled-components';
+import { flex } from '../../GlobalStyles';
 
 export const HomeGallerySection = styled.section`
   display: grid;
@@ -40,7 +40,7 @@ export const HomeGallerySection = styled.section`
 
   .gallery-accessories,
   .gallery-new-shoes {
-    ${flex({ direction: "column", justify: "center", align: "center" })}
+    ${flex({ direction: 'column', justify: 'center', align: 'center' })}
     text-align: center;
     font-size: 1.5rem;
   }
@@ -69,3 +69,5 @@ export const HomeGallerySection = styled.section`
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   }
 `;
+
+export default HomeGallerySection;

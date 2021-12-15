@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const StyledButton = styled.button`
   background: #202020;
@@ -13,3 +13,5 @@ export const StyledButton = styled.button`
     opacity: 0.8;
   }
 `;
+
+export default StyledButton;

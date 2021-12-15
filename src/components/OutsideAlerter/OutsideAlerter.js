@@ -1,5 +1,4 @@
-import React, { useRef, useEffect } from "react";
-import PropTypes from "prop-types";
+import React, { useRef, useEffect } from 'react';
 
 /**
  * Hook that alerts clicks outside of the passed ref
@@ -19,10 +18,10 @@ function useOutsideAlerter(ref, setShowElement, searchRef) {
       }
     }
     // Bind the event listener
-    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside);
     return () => {
       // Unbind the event listener on clean up
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [ref]);
 }
@@ -30,15 +29,11 @@ function useOutsideAlerter(ref, setShowElement, searchRef) {
 /**
  * Component that alerts if you click outside of it
  */
-function OutsideAlerter(props) {
+function OutsideAlerter({ setShowElement, children, searchRef }) {
   const wrapperRef = useRef(null);
-  useOutsideAlerter(wrapperRef, props.setShowElement, props.searchRef);
+  useOutsideAlerter(wrapperRef, setShowElement, searchRef);
 
-  return <div ref={wrapperRef}>{props.children}</div>;
+  return <div ref={wrapperRef}>{children}</div>;
 }
-
-OutsideAlerter.propTypes = {
-  children: PropTypes.element.isRequired,
-};
 
 export default OutsideAlerter;

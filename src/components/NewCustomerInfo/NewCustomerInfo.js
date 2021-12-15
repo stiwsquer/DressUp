@@ -1,15 +1,15 @@
-import Button from "../Button/Button";
-import React from "react";
+import React from 'react';
+import { useHistory } from 'react-router-dom';
+import Button from '../Button/Button';
 import {
   NewCustomerInfoInner,
   NewCustomerInfoOuter,
-} from "./NewCustomerInfo.style";
-import { useHistory } from "react-router-dom";
+} from './NewCustomerInfo.style';
 
-export default React.memo(function NewCustomerInfo() {
+export default React.memo(() => {
   const history = useHistory();
   const handleClick = () => {
-    history.push("/register");
+    history.push('/register');
   };
   return (
     <NewCustomerInfoOuter>

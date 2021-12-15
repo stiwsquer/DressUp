@@ -1,31 +1,34 @@
-import React, { useState } from "react";
-import { Redirect } from "react-router";
-import { Link } from "react-router-dom";
-import Button from "../Button/Button";
-import Input from "../Input/Input";
-import NewCustomerInfo from "../NewCustomerInfo/NewCustomerInfo";
-import { SignInForm, SignInSection } from "./SignIn.style";
-import { useLoginContext } from "../../context/LoginContext";
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import React, { useState } from 'react';
+import { Redirect } from 'react-router';
+import { Link } from 'react-router-dom';
+import Button from '../Button/Button';
+import Input from '../Input/Input';
+import NewCustomerInfo from '../NewCustomerInfo/NewCustomerInfo';
+import { SignInForm, SignInSection } from './SignIn.style';
+import { useLoginContext } from '../../context/LoginContext';
 
-export default React.memo(function SignIn() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+export default React.memo(() => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [redirect, setRedirect] = useState(false);
-  const [isUserLoggedIn, updateUserStatus] = useLoginContext();
+  const [, updateUserStatus] = useLoginContext();
 
   const submit = async (e) => {
     e.preventDefault();
-    const respone = await fetch("http://localhost:3002/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      credentials: "include",
+    const res = await fetch('http://localhost:3002/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
       body: JSON.stringify({
-        email: email,
-        password: password,
+        email,
+        password,
       }),
     });
-    updateUserStatus(true);
-    setRedirect(true);
+    if (res) {
+      updateUserStatus(true);
+      setRedirect(true);
+    }
   };
 
   if (redirect) {

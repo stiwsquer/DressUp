@@ -1,8 +1,8 @@
-import styled from "styled-components";
-import { flex } from "../../GlobalStyles";
+import styled from 'styled-components';
+import { flex } from '../../GlobalStyles';
 
 export const SelectWrapper = styled.div`
-  ${flex({ direction: "column", align: "flex-start" })};
+  ${flex({ direction: 'column', align: 'flex-start' })};
 
   label {
     line-height: 1.5;
@@ -18,3 +18,5 @@ export const SelectWrapper = styled.div`
     font-size: 1.5rem;
   }
 `;
+
+export default SelectWrapper;

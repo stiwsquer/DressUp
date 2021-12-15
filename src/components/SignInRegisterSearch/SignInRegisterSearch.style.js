@@ -1,9 +1,9 @@
-import styled from "styled-components";
-import { flex } from "../../GlobalStyles";
+import styled from 'styled-components';
+import { flex } from '../../GlobalStyles';
 
 export const UlContainer = styled.ul`
   flex: 0;
-  ${flex({ justify: "space-between" })}
+  ${flex({ justify: 'space-between' })}
   a {
     transition: all 0.4s ease-in-out;
     translate: scale(1);
@@ -30,8 +30,8 @@ export const UlContainer = styled.ul`
     height: 110vh;
     background: white;
     z-index: 1;
-    ${flex({ direction: "column", justify: "center", align: "center" })}
-    display: ${(props) => (props.showMenu ? "flex" : "none")};
+    ${flex({ direction: 'column', justify: 'center', align: 'center' })}
+    display: ${(props) => (props.showMenu ? 'flex' : 'none')};
     .vertical-line {
       display: none;
     }
@@ -41,3 +41,5 @@ export const UlContainer = styled.ul`
     }
   }
 `;
+
+export default UlContainer;

@@ -1,16 +1,17 @@
-import React from "react";
-import { InputWrapper } from "./Input.style";
-export default React.memo(function Input({
-  isRequired,
-  inputId,
-  inputType,
-  placeholder,
-  inputValue,
-  onChange,
-  autoFocus,
-  children,
-}) {
-  return (
+import React from 'react';
+import { InputWrapper } from './Input.style';
+
+export default React.memo(
+  ({
+    isRequired,
+    inputId,
+    inputType,
+    placeholder,
+    inputValue,
+    onChange,
+    autoFocus,
+    children,
+  }) => (
     <InputWrapper>
       <label htmlFor={inputId}>{children}</label>
       <input
@@ -20,8 +21,9 @@ export default React.memo(function Input({
         value={inputValue}
         onChange={onChange}
         required={isRequired}
+        // eslint-disable-next-line jsx-a11y/no-autofocus
         autoFocus={autoFocus}
       />
     </InputWrapper>
-  );
-});
+  ),
+);

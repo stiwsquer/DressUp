@@ -1,8 +1,8 @@
-import styled from "styled-components";
-import { flex } from "../../GlobalStyles";
+import styled from 'styled-components';
+import { flex } from '../../GlobalStyles';
 
 export const InputWrapper = styled.div`
-  ${flex({ direction: "column", align: "flex-start" })};
+  ${flex({ direction: 'column', align: 'flex-start' })};
 
   label {
     line-height: 1.5;
@@ -17,3 +17,4 @@ export const InputWrapper = styled.div`
     font-size: 1.5rem;
   }
 `;
+export default InputWrapper;

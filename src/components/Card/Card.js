@@ -1,25 +1,18 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { useState } from "react";
-import CardModal from "../CardModal/CardModal";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
+import CardModal from '../CardModal/CardModal';
 import {
   StyledCard,
   CardFigure,
   FigCaption,
   CardButton,
-  CardBody,
   CardTitle,
   CardText,
-} from "./Card.style";
-import CardSwatches from "../CardSwatches/CardSwatches";
+} from './Card.style';
+import CardSwatches from '../CardSwatches/CardSwatches';
 
-export default React.memo(function Card({
-  linkTo,
-  imagesSources,
-  title,
-  text,
-  imgAlt,
-}) {
+export default React.memo(({ linkTo, imagesSources, title, text, imgAlt }) => {
   const [imgSrc, setImgSrc] = useState(imagesSources[0].src);
   const [imgSrcHover, setImgSrcHover] = useState(imagesSources[0].srcHover);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -49,7 +42,7 @@ export default React.memo(function Card({
             onClick={() => {
               setIsModalOpen(true);
             }}
-          ></CardButton>
+          />
 
           <CardModal
             open={isModalOpen}
@@ -57,7 +50,7 @@ export default React.memo(function Card({
             imagesSources={imagesSources}
             title={title}
             text={text}
-          ></CardModal>
+          />
         </FigCaption>
       </CardFigure>
       <div>
